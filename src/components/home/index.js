@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import IntlTelInput from 'react-intl-tel-input';
+import { Link } from "react-router-dom";
 import 'react-intl-tel-input/dist/main.css';
 import SweetCard from "../reuse/sweetcard";
 import SweetHead from "../reuse/sweetcard/sweetHead";
-
+import TwitterBird from "../../assests/img/twitterbird.svg"
 
 
 export default class Home extends Component {
@@ -30,7 +31,19 @@ export default class Home extends Component {
                                         className="form-control primary"
                                         placeholder="Create a password" />
                                 </div>
+
                                 <button className="btn btn-primary">Sign up</button>
+
+                                <p className="text-center">
+                                    Already have an account?
+                                    <Link to="/login">login</Link>
+                                </p>
+
+                                <a href="#!" className="btn btn-primary twitter-link">
+                                    <img src={TwitterBird} alt="twt" />
+                                    <span>continue with twitter</span>
+                                </a>
+
                             </div>
 
                         </SweetCard>

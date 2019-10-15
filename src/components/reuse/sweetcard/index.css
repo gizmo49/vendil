@@ -17,3 +17,9 @@
     color: #747A76;
     margin-bottom: 5px;
 }
+
+.btn.twitter-link {
+    border-color: #03A9F4 !important;
+    color: #03A9F4 !important;
+    background-color: #FFFFFF !important;
+}
