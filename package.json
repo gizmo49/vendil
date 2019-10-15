@@ -5,6 +5,9 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-helmet": "^5.2.1",
+    "react-intl-tel-input": "^7.0.3",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0"
   },
   "scripts": {

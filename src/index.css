@@ -1,0 +1,63 @@
+:root {
+    --main-fill-normal: #00D0BE;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'matteolight';
+    background: #F8F8F8;
+}
+
+.px-40{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#vendil {
+    height: 100%;
+}
+
+.sweet--card {
+    padding: 20px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 40px rgba(1, 1, 1, 0.06);
+    border-radius: 4px;
+}
+
+.form-control.primary {
+    color: #576F7F;
+    font-size: 15px;
+    /* letter-spacing: -0.4px; */
+    border: 1px solid #E5E5E5;
+    border-radius: 0px;
+    box-shadow: none;
+    outline: none;
+}
+
+.form-control.primary:focus{
+    border-color: var(--main-fill-normal);
+}
+
+.btn.btn-primary {
+    font-family: "matteomedium";
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    border-radius: 0px;
+    color: #FFFFFF;
+    background-color: var(--main-fill-normal);
+    border-color: var(--main-fill-normal);
+    width: 100%;
+    text-transform: uppercase;
+    
+    outline: none;
+    box-shadow: none;
+}
+
+/* Intl Telephone Input */
+.intl-tel-input {
+    width: 100%;
+}
