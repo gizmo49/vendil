@@ -39,6 +39,10 @@ export default class Home extends Component {
                                     <Link to="/login">login</Link>
                                 </p>
 
+                                <div className="d-flex justify-content-center">
+                                    <h6 class="tally"><span>or</span></h6>
+                                </div>
+
                                 <a href="#!" className="btn btn-primary twitter-link">
                                     <img src={TwitterBird} alt="twt" />
                                     <span>continue with twitter</span>
