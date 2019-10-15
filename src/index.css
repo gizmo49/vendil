@@ -44,6 +44,9 @@ body {
     border-color: var(--main-fill-normal);
     width: 100%;
     text-transform: uppercase;
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
 
     outline: none;
     box-shadow: none;
@@ -52,4 +55,47 @@ body {
 /* Intl Telephone Input */
 .intl-tel-input {
     width: 100%;
+}
+
+.btn.twitter-link {
+    border-color: #03A9F4 !important;
+    color: #03A9F4 !important;
+    background-color: #FFFFFF !important;
+}
+
+.btn.twitter-link img{
+    margin-right: 10px;
+}
+
+.tally{
+    width: 70%;
+    text-align: center;
+    border-bottom: 0.5px solid rgba(51, 204, 102, 0.7);
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+.tally span{
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 10px;
+}
+
+p.already {
+    font-size: 14px;
+    font-weight: bold;
+    color: #00100F;
+    letter-spacing: 0.25px;
+    margin: 10px 0;
+}
+
+p.already a{
+    font-family: "matteomedium";
+    color: var(--main-fill-normal);
+    margin-left: 10px;
+    text-decoration: underline;
 }

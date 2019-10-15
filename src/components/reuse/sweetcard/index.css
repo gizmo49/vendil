@@ -3,41 +3,19 @@
     background: #FFFFFF;
     box-shadow: 0px 4px 40px rgba(1, 1, 1, 0.06);
     border-radius: 4px;
+    padding: 10px 0;
+    padding-top: 20px;
 }
 
 .sweet--card--head h6 {
     font-family: "matteomedium";
     font-size: 20px;
     color: #001110;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 .sweet--card--head p {
-    font-size: 14px;
+    font-size: 14px; 
     color: #747A76;
     margin-bottom: 5px;
-}
-
-.btn.twitter-link {
-    border-color: #03A9F4 !important;
-    color: #03A9F4 !important;
-    background-color: #FFFFFF !important;
-}
-
-.tally{
-    width: 70%;
-    text-align: center;
-    border-bottom: 0.5px solid rgba(51, 204, 102, 0.7);
-    line-height: 0.1em;
-    margin: 10px 0 20px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-
-.tally span{
-    text-transform: uppercase;
-    font-weight: bold;
-    background: #fff;
-    padding: 0 10px;
 }
