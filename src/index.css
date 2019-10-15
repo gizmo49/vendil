@@ -20,14 +20,6 @@ body {
     height: 100%;
 }
 
-.sweet--card {
-    padding: 20px;
-    width: 100%;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 40px rgba(1, 1, 1, 0.06);
-    border-radius: 4px;
-}
-
 .form-control.primary {
     color: #576F7F;
     font-size: 15px;
@@ -52,7 +44,7 @@ body {
     border-color: var(--main-fill-normal);
     width: 100%;
     text-transform: uppercase;
-    
+
     outline: none;
     box-shadow: none;
 }

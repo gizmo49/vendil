@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import IntlTelInput from 'react-intl-tel-input';
 import 'react-intl-tel-input/dist/main.css';
+import SweetCard from "../reuse/sweetcard";
+import SweetHead from "../reuse/sweetcard/sweetHead";
+
 
 
 export default class Home extends Component {
@@ -11,7 +14,11 @@ export default class Home extends Component {
                 <div className="row justify-content-center align-items-center h-100">
                     <div className="col-md-6">
 
-                        <div className="sweet--card">
+                        <SweetCard>
+
+                            <SweetHead title="Get Started"
+                                paragraph="Ut enim ad minim veniam, quis nostrud exercitation." />
+
                             <div className="px-40">
                                 <div className="mb-3">
                                     <IntlTelInput preferredCountries={['NG']}
@@ -25,7 +32,8 @@ export default class Home extends Component {
                                 </div>
                                 <button className="btn btn-primary">Sign up</button>
                             </div>
-                        </div>
+
+                        </SweetCard>
 
                     </div>
                 </div>
