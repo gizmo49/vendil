@@ -6,6 +6,7 @@ import SweetCard from "../reuse/sweetcard";
 import SweetHead from "../reuse/sweetcard/sweetHead";
 import TwitterBird from "../../assests/img/twitterbird.svg"
 import FlowerBack from "../base/flowerback";
+import CenterLogo from "../base/CenterLogo";
 
 
 export default class Home extends Component {
@@ -16,6 +17,7 @@ export default class Home extends Component {
                 <div className="row justify-content-center align-items-center h-100">
                     <div className="col-xl-4 col-lg-6 col-md-6 col-sm-7 col-10">
                         <FlowerBack />
+                        <CenterLogo />
                         <SweetCard>
                             <SweetHead title="Get Started"
                                 paragraph="Ut enim ad minim veniam, quis nostrud exercitation." />
