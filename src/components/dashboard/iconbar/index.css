@@ -1,0 +1,29 @@
+
+.menu{
+    position: fixed;
+    padding: 20px;
+    height: 100%;
+    background: #004B40;
+    box-shadow: 1px 0px 25px rgba(0, 0, 0, 0.04);
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+a.icon-link {
+    background: rgba(255, 255, 255, 0.6);
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    display: block;
+    width: 30px;   
+    height: 30px;
+    background: #ffffff;
+}
