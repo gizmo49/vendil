@@ -1,0 +1,13 @@
+ul.tabs-ul {
+    padding-left: 20px;
+}
+
+ul.tabs-ul li{
+    margin-bottom: 10px;
+}
+
+ul.tabs-ul li a.nav-tab {
+    font-size: 16px;
+    letter-spacing: 0.25px;
+    color: #98A0AA;
+}

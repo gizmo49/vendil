@@ -11,7 +11,7 @@ body {
     background: #F8F8F8;
 }
 
-.px-40{
+.px-40 {
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -30,7 +30,7 @@ body {
     outline: none;
 }
 
-.form-control.primary:focus{
+.form-control.primary:focus {
     border-color: var(--main-fill-normal);
 }
 
@@ -44,15 +44,14 @@ body {
     border-color: var(--main-fill-normal);
     width: 100%;
     text-transform: uppercase;
-    
     padding-top: 10px;
     padding-bottom: 10px;
-
     outline: none;
     box-shadow: none;
 }
 
 /* Intl Telephone Input */
+
 .intl-tel-input {
     width: 100%;
 }
@@ -63,11 +62,11 @@ body {
     background-color: #FFFFFF !important;
 }
 
-.btn.twitter-link img{
+.btn.twitter-link img {
     margin-right: 10px;
 }
 
-.tally{
+.tally {
     width: 70%;
     text-align: center;
     border-bottom: 0.5px solid rgba(51, 204, 102, 0.7);
@@ -77,8 +76,7 @@ body {
     margin-bottom: 40px;
 }
 
-
-.tally span{
+.tally span {
     text-transform: uppercase;
     font-weight: bold;
     background: #fff;
@@ -93,9 +91,18 @@ p.already {
     margin: 10px 0;
 }
 
-p.already a{
+p.already a {
     font-family: "matteomedium";
     color: var(--main-fill-normal);
     margin-left: 10px;
     text-decoration: underline;
+}
+
+/* Simple chunks of dashboard styling */
+#content {
+    min-height: 100vh;
+    padding: 20px 0;
+    background: #FDFDFE;
+    width: calc(100% - 150px);
+    margin: auto;
 }

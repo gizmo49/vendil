@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink, withRouter } from 'react-router-dom';
+import routes from "../routes";
 import "./index.css";
 
 class IconBar extends Component {
@@ -10,29 +11,18 @@ class IconBar extends Component {
             <div className="menu">
                 <ul className="list-unstyled">
 
-                    <li>
-                        <NavLink to="/dashboard/"
-                            className="icon-link"
-                            activeClassName="active">
-                            <span className="icon"></span>
-                        </NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink to="/vend" 
-                            className="icon-link"
-                            activeClassName="active">
-                            <span className="icon"></span>
-                        </NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink to="/dashboard" 
-                            className="icon-link"
-                            activeClassName="active">
-                            <span className="icon"></span>
-                        </NavLink>
-                    </li>
+                    {
+                        (routes).map((item, key) => (
+                            <li key={key}>
+                                <NavLink to={item.path}
+                                    className="icon-link"
+                                    activeClassName="active">
+                                    <span className={item.iconName}></span>
+                                </NavLink>
+                            </li>
+                        ))
+                    }
+                    
                 </ul>
             </div>
         )
