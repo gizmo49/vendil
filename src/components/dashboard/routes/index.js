@@ -8,10 +8,13 @@ const OutwardVend = () => (<h6> vend outwards </h6>);
 const Dashboard = () => (<h6>dashboard home</h6>);
 const DashboardTranscations = () => (<h6>dashboard transcation </h6>)
 
+const VendWallet = () => (<div className="text-center">Vend wallet system</div>)
+
+const Settings = () => (<div className="text-center">Settings</div>)
 
 export default [
     {
-        iconName: "icon",
+        iconName: "block",
         title: "Dashboard",
         path: '/dashboard',
         component: TabSystem,
@@ -24,17 +27,19 @@ export default [
             {
                 path: '/dashboard/home',
                 component: Dashboard,
-                tab: 'Dashboard'
+                tab: 'Dashboard',
+                tabIcon: 'block'
             },
             {
                 path: '/dashboard/transcations',
                 component: DashboardTranscations,
-                tab: 'Transcations'
+                tab: 'Transcations',
+                tabIcon: 'card'
             }
         ]
     },
     {
-        iconName: "vend",
+        iconName: "lend",
         title: "Vend",
         path: '/vend',
         component: TabSystem,
@@ -55,5 +60,47 @@ export default [
                 tab: 'Outward Vend'
             }
         ]
+    },
+    {
+        iconName: "wallet",
+        title: "Vend",
+        path: '/wallet',  
+        component: TabSystem,
+        routes: [
+            {
+                path: '/wallet',
+                component: VendWallet,
+                tab: 'My Wallet'
+            },
+            {
+                path: '/wallet/stolen',
+                component: VendWallet,
+                tab: 'Stolen Wallet'
+            }
+        ]
+    },
+    {
+        iconName: "bolt",
+        title: "Settings",
+        path: '/settings',  
+        component: TabSystem,
+        routes: [
+            {
+                path: '/settings',
+                exact: true,
+                component: () => <Redirect replace to="/settings/personal" />
+            },
+            {
+                path: '/settings/personal',
+                component: Settings,
+                tab: 'personal information'
+            },
+            {
+                path: '/settings/password',
+                component: Settings,
+                tab: 'password'
+            }
+        ]
     }
+
 ];

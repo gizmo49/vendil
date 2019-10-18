@@ -10,24 +10,22 @@ const hist = createBrowserHistory();
 
 class Landing extends Component {
 
-    componentDidMount = () =>  document.body.style.background = "rgb(194, 234, 228)";
+    componentDidMount = () =>  document.body.style.background = "#FDFDFE";
 
     render = () => {
 
         return (
             <>
                 <Router history={hist}>
-                    <div className="container p-0">
+                    <>
                         <IconBar />
                         <div id="content">
-                            <div className="container">
-                                <Switch>
-                                    {RoutesWithSubRoutes(routes)}
-                                    <Route exact path="*" render={() => <NotFound />} />
-                                </Switch>
-                            </div>
+                            <Switch>
+                                {RoutesWithSubRoutes(routes)}
+                                <Route exact path="*" render={() => <NotFound />} />
+                            </Switch>
                         </div>
-                    </div>
+                    </>
                 </Router>
             </>
         )

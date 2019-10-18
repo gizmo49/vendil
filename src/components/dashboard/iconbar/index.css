@@ -1,5 +1,4 @@
-
-.menu{
+.menu {
     position: fixed;
     padding: 20px;
     height: 100%;
@@ -8,26 +7,36 @@
 }
 
 .menu ul li {
-    margin: 20px 0;
+    margin: 30px 0;
+}
+
+.vend--center {
+    background: #ffffff;
+    margin: 10px 0;
+    margin-bottom: 30px;
+    height: 40px;
+    width: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 a.icon-link {
-    background: rgba(255, 255, 255, 0.6);
+    background: transparent;
     width: 40px;
     height: 40px;
     border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* transition: all 0.8s; */
+}
+
+a.icon-link:hover{
+    border: 2px solid rgba(255, 255, 255, 0.6);
 }
 
 a.icon-link.active {
-    border: 1px solid red;
-}
-
-.icon{
-    display: block;
-    width: 30px;   
-    height: 30px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.6);
 }

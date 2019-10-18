@@ -1,0 +1,32 @@
+.vendIcon {
+    display: inline-block;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    transition: all 0.5s;
+}
+
+.vendIcon.block {
+    -webkit-mask: url(./files/block.svg) no-repeat center;
+    mask: url(./files/block.svg) no-repeat center;
+}
+
+.vendIcon.bolt {
+    -webkit-mask: url(./files/bolt.svg) no-repeat center;
+    mask: url(./files/bolt.svg) no-repeat center;
+}
+
+.vendIcon.wallet {
+    -webkit-mask: url(./files/wallet.svg) no-repeat center;
+    mask: url(./files/wallet.svg) no-repeat center;
+}
+
+.vendIcon.lend {
+    -webkit-mask: url(./files/lend.svg) no-repeat center;
+    mask: url(./files/lend.svg) no-repeat center;
+}
+
+.vendIcon.card {
+    -webkit-mask: url(./files/card.svg) no-repeat center;
+    mask: url(./files/card.svg) no-repeat center;
+}
