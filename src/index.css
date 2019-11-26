@@ -49,6 +49,10 @@ body {
     border-color: var(--main-fill-normal);
 }
 
+.form-control.primary:disabled {
+    background: inherit;
+}
+
 input.form-control.primary::placeholder {
     color: #576F7F;
     font-family: 'matteolight';

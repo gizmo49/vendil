@@ -1,28 +1,37 @@
 import React, { Component } from "react";
 import IntlTelInput from 'react-intl-tel-input';
+import Spinner from "../../../base/Spinner/Spinner";
 import 'react-intl-tel-input/dist/main.css';
 
-class RegistrationForm extends Component {
+export default class RegistrationForm extends Component {
 
     state = {
+        dialCode: "",
         phoneNumber: ""
     }
 
     HandleSubmit = (e) => {
         e.preventDefault();
-        console.log("attempted form");
+        const { dialCode,phoneNumber } = this.state;
+        if(phoneNumber.length > 5) {
+            let telePhoneNumber = `+${dialCode}${phoneNumber}`;
+            console.log(telePhoneNumber);
+            this.setState({ "loading" : true })
+        }
     }
 
-    // handlePhone = (e) => {
-    //     let {value} = e.target;
-    //     let Numbers = value.replace(/[^0-9]/g, '');
-    //     value = Numbers.replace(/^(-?)0+/, '');
-    //     this.setState({
-    //         "phoneNumber" : value
-    //     })
-    // }
+    handlePhone = (status, value, countryData) => {
+        let Numbers = value.replace(/[^0-9]/g, '');
+        value = Numbers.replace(/^(-?)0+/, '');
+        this.setState({
+            "phoneNumber" : value,
+            "dialCode": countryData.dialCode
+        })
+    }
 
     render = () => {
+        const {phoneNumber, loading} =  this.state;
+
         return (
                 <form onSubmit={this.HandleSubmit} className="primary-form">
                     <div className="form-group">
@@ -30,14 +39,19 @@ class RegistrationForm extends Component {
                         <IntlTelInput
                             preferredCountries={['NG']}
                             onlyCountries={['NG', 'GH']}
+                            onPhoneNumberChange={this.handlePhone}
+                            value={phoneNumber}
+                            disabled={loading}
                             separateDialCode={true}
                             inputClassName="form-control primary"
                             autoComplete="off" />
                     </div>
-                    <button className="btn btn-primary">continue</button>
+                    <button 
+                        className="btn btn-primary" 
+                        disabled={loading}>
+                        {(loading) ? <Spinner /> : "continue" }
+                    </button>
                 </form>
         )
     }
 }
-
-export default RegistrationForm;
