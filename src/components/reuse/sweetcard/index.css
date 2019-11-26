@@ -10,13 +10,16 @@
 
 .sweet--card--head h6 {
     font-family: "matteomedium";
-    font-size: 20px;
-    color: #001110;
-    margin-bottom: 0px;
+    font-size: 24px;
+    letter-spacing: 0.3px;
+    color: #03332A;
+    margin-bottom: 5px;
 }
 
 .sweet--card--head p {
-    font-size: 14px; 
-    color: #747A76;
+    font-size: 15px; 
+    font-weight: bolder;
+    letter-spacing: 0.25px;
+    color: #00D0BE;
     margin-bottom: 5px;
 }

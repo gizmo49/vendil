@@ -1,0 +1,16 @@
+.tally {
+    width: 70%;
+    text-align: center;
+    border-bottom: 0.5px solid rgba(51, 204, 102, 0.7);
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.tally span {
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 10px;
+}

@@ -11,6 +11,8 @@ import CenterLogo from "../base/CenterLogo";
 
 export default class Home extends Component {
 
+    componentDidMount = () =>  document.body.style.background = "#E0FAF8";
+
     render = () => {
         return (
             <section className="h-100">

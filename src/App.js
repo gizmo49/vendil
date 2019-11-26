@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 import Landing from "./components/dashboard/landing";
-import Home from "./components/home";
+import Register from './components/auth/Register/Register';
+import Login from './components/auth/Login/Login';
 import "./assests/css/fonts.css";
 import "./index.css";
 
@@ -16,7 +17,8 @@ export default class App extends Component {
       <>
         <Router history={hist}>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route path="/sign-up" component={Register} />
+            <Route path="/sign-in" component={Login} />
             <Route component={Landing} />
             <Route exact path="*" render={() => <NotFound />} />
           </Switch>

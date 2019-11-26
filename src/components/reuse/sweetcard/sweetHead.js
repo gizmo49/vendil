@@ -12,7 +12,6 @@ class SweetHead extends Component {
                     <h6>{title}</h6>
                     <p>{paragraph}</p>
                 </div>
-                <hr />
             </div>
         )
     }

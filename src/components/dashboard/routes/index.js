@@ -1,15 +1,12 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import TabSystem from "../TabSystem";
+import DashboardHome from "../DashboardHome";
+import DashboardTranscations from "../DashboardTranscations";
 
 const SuperVend = () => (<h6>super vend</h6>);
 const OutwardVend = () => (<h6> vend outwards </h6>);
-
-const Dashboard = () => (<h6>dashboard home</h6>);
-const DashboardTranscations = () => (<h6>dashboard transcation </h6>)
-
 const VendWallet = () => (<div className="text-center">Vend wallet system</div>)
-
 const Settings = () => (<div className="text-center">Settings</div>)
 
 export default [
@@ -26,7 +23,7 @@ export default [
             },
             {
                 path: '/dashboard/home',
-                component: Dashboard,
+                component: DashboardHome,
                 tab: 'Dashboard',
                 tabIcon: 'block'
             },

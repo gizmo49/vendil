@@ -6,6 +6,10 @@
     transition: all 0.5s;
 }
 
+.vendIcon.vendIcon--vend {
+    background-color: var(--main-fill-normal);
+}
+
 .vendIcon.block {
     -webkit-mask: url(./files/block.svg) no-repeat center;
     mask: url(./files/block.svg) no-repeat center;
@@ -29,4 +33,9 @@
 .vendIcon.card {
     -webkit-mask: url(./files/card.svg) no-repeat center;
     mask: url(./files/card.svg) no-repeat center;
+}
+
+.vendIcon.bell {
+    -webkit-mask: url(./files/bell.svg) no-repeat center;
+    mask: url(./files/bell.svg) no-repeat center;
 }

@@ -20,11 +20,26 @@ body {
     height: 100%;
 }
 
+.primary-form .form-group {
+    margin-bottom: 25px;
+}
+
+.primary-form label{
+    font-weight: bolder;
+    font-size: 14.5px;
+    line-height: 17px;
+    letter-spacing: 0.25px;
+    color: #356666;
+}
+
 .form-control.primary {
-    color: #576F7F;
+    color: #03332A;
+    font-family: "matteomedium";
     font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     /* letter-spacing: -0.4px; */
-    border: 1px solid #E5E5E5;
+    border: 1px solid #B3F1EC;
     border-radius: 0px;
     box-shadow: none;
     outline: none;
@@ -32,6 +47,11 @@ body {
 
 .form-control.primary:focus {
     border-color: var(--main-fill-normal);
+}
+
+input.form-control.primary::placeholder {
+    color: #576F7F;
+    font-family: 'matteolight';
 }
 
 .btn.btn-primary {
@@ -66,23 +86,6 @@ body {
     margin-right: 10px;
 }
 
-.tally {
-    width: 70%;
-    text-align: center;
-    border-bottom: 0.5px solid rgba(51, 204, 102, 0.7);
-    line-height: 0.1em;
-    margin: 10px 0 20px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.tally span {
-    text-transform: uppercase;
-    font-weight: bold;
-    background: #fff;
-    padding: 0 10px;
-}
-
 p.already {
     font-size: 14px;
     font-weight: bold;
@@ -92,7 +95,8 @@ p.already {
 }
 
 p.already a {
-    font-family: "matteomedium";
+    /* font-family: "matteomedium"; */
+    letter-spacing: 0.25px;
     color: var(--main-fill-normal);
     margin-left: 10px;
     text-decoration: underline;
@@ -102,7 +106,35 @@ p.already a {
 #content {
     min-height: 100vh;
     padding: 20px 0;
+    padding-top: 40px;
     background: #FDFDFE;
     width: calc(100% - 150px);
     margin: auto;
+}
+
+.btn{
+    outline: none;
+    box-shadow: none;
+}
+
+/* Btn Styles */
+.btn.btn--sec{
+    width: 100%;
+    background: #F1FAF9;
+    border-radius: 2px;
+    color: #00100F;
+    font-size: 13px;
+}
+/* 
+.iti-arrow {
+    display: none !important;
+} */
+
+.intl-tel-input.allow-dropdown.separate-dial-code .selected-flag {
+    background: #FFFFFF;
+    outline: none;
+}
+
+.selected-dial-code{
+    font-family: "matteomedium";
 }
