@@ -6,6 +6,13 @@ import CenterLogo from "../../base/CenterLogo";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import Maybe from "../../base/Maybe/Maybe";
 
+const TwiiterButton = () => (
+    <a href="#!" className="btn btn-primary twitter-link">
+        <img src={TwitterBird} alt="twt" />
+        <span>Login with twitter</span>
+    </a>
+)
+
 const Register = () => {
 
     useEffect(() => {
@@ -26,10 +33,7 @@ const Register = () => {
                         <div className="px-40 py-3">
                             <RegistrationForm />
                             <Maybe />
-                            <a href="#!" className="btn btn-primary twitter-link">
-                                <img src={TwitterBird} alt="twt" />
-                                <span>Login with twitter</span>
-                            </a>
+                            <TwiiterButton />
                         </div>
                     </SweetCard>
                 </div>

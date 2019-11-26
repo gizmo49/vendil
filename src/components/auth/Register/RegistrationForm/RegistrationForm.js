@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import IntlTelInput from 'react-intl-tel-input';
+import AlertBox from "../../../utils/AlertBox/ALertBox";
 import Spinner from "../../../base/Spinner/Spinner";
 import 'react-intl-tel-input/dist/main.css';
 
@@ -33,6 +34,8 @@ export default class RegistrationForm extends Component {
         const {phoneNumber, loading} =  this.state;
 
         return (
+            <>
+                <AlertBox />
                 <form onSubmit={this.HandleSubmit} className="primary-form">
                     <div className="form-group">
                         <label>Phone Number</label>
@@ -52,6 +55,7 @@ export default class RegistrationForm extends Component {
                         {(loading) ? <Spinner /> : "continue" }
                     </button>
                 </form>
+            </>
         )
     }
 }
