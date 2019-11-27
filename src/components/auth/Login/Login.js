@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import IntlTelInput from 'react-intl-tel-input';
-import 'react-intl-tel-input/dist/main.css';
 import SweetCard from "../../reuse/sweetcard";
 import SweetHead from "../../reuse/sweetcard/sweetHead";
 import TwitterBird from "../../../assests/img/twitterbird.svg";
 import CenterLogo from "../../base/CenterLogo";
 import Maybe from "../../base/Maybe/Maybe";
+import 'react-intl-tel-input/dist/main.css';
 
 
 export default class Login extends Component {

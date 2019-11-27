@@ -4,9 +4,15 @@ import IntlTelInput from 'react-intl-tel-input';
 import {setStep} from "../../../../actions/regAction";
 import AlertBox from "../../../utils/AlertBox/ALertBox";
 import Spinner from "../../../base/Spinner/Spinner";
+import { API } from "../../../../lib/api";
+import routes from "../../../../lib/api/routes";
 import 'react-intl-tel-input/dist/main.css';
 
+
 class RegistrationForm extends Component {
+
+    controller = new AbortController();
+    _isMounted = false;
 
     state = {
         dialCode: "",
@@ -15,14 +21,38 @@ class RegistrationForm extends Component {
         showAlert: false,
     }
 
+    componentDidMount = () => this._isMounted = true;
+
+    componentWillUnmount = () => {
+        this.controller.abort()
+        this._isMounted = false;
+    }
+
+    SendOtp = () => {
+        const { dialCode, phoneNumber } = this.state;
+        const { signal } = this.controller;
+
+        API({
+            MethodType: 'POST',
+            RequestUri: routes.sendOtp,
+            Payload: {
+                phoneNumber: `+${dialCode}${phoneNumber}`
+            },
+            signal: signal
+        }).then((res) => {
+            this.setState({ loading : false })
+            console.log(res);
+        }).catch((err) => {
+            this.setState({ loading : false })
+        })
+    }
+
     HandleSubmit = (e) => {
         e.preventDefault();
-        const { dialCode, phoneNumber } = this.state;
+        const { phoneNumber } = this.state;
         if (phoneNumber.length > 5) {
-            let telePhoneNumber = `+${dialCode}${phoneNumber}`;
-            this.props.setStep(2);
-            console.log(telePhoneNumber);
             this.setState({ "loading": true })
+            this.SendOtp();
         }
     }
 

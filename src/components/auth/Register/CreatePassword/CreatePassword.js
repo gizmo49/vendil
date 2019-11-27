@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
-class VerificationForm extends Component {
+class CreatePassword extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
@@ -10,15 +10,15 @@ class VerificationForm extends Component {
         return (
             <form onSubmit={this.handleSubmit} className="primary-form">>
                 <div className="form-group">
-                    <label>Verification Code</label>
-                    <input className="form-control primary" placeholder="Enter Verification Code" />
+                    <label>Password</label>
+                    <input className="form-control primary" placeholder="Create password" />
                 </div>
                 <button className="btn btn-primary">
-                    Verify Your Account
-            </button>
+                    Create Password
+                </button>
             </form>
         )
     }
 }
 
-export default VerificationForm;
+export default CreatePassword;

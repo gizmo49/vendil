@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from "react-redux";
+import headings from "./data";
 import TwitterBird from "../../../assests/img/twitterbird.svg";
 import SweetHead from "../../reuse/sweetcard/sweetHead";
 import SweetCard from "../../reuse/sweetcard";
@@ -16,25 +17,9 @@ const TwiiterButton = () => (
 
 class Register extends Component {
 
-    state = {
-        headings: [
-            {
-                id:1,
-                title: "Get Started",
-                paragraph: "Let’s get you all setup for vendly"
-            },
-            {
-                id:2,
-                title: "Verify your account",
-                paragraph: "Please enter the sms verification code sent to you"
-            }
-        ]
-    }
-
     componentDidMount = () => document.body.style.background = "#E0FAF8";
 
     getHeadInfo = () => {
-        const{ headings } = this.state;
         const {regProps: { currentStep }} = this.props;
         return (headings.find((x) => x.id === currentStep ));
     }
@@ -42,7 +27,7 @@ class Register extends Component {
    
     render = () => {
         const {regProps: { currentStep }} = this.props;
-        
+
         return (
             <section className="h-100">
                 <div className="row justify-content-center align-items-center h-100">
