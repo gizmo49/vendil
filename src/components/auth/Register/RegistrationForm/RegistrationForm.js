@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import IntlTelInput from 'react-intl-tel-input';
-import {setStep} from "../../../../actions/regAction";
+import { updatePhone } from "../../../../actions/regAction";
 import AlertBox from "../../../utils/AlertBox/ALertBox";
 import Spinner from "../../../base/Spinner/Spinner";
 import { API } from "../../../../lib/api";
@@ -31,19 +31,20 @@ class RegistrationForm extends Component {
     SendOtp = () => {
         const { dialCode, phoneNumber } = this.state;
         const { signal } = this.controller;
+        const telePhoneNumber = `+${dialCode}${phoneNumber}`;
 
         API({
             MethodType: 'POST',
             RequestUri: routes.sendOtp,
-            Payload: {
-                phoneNumber: `+${dialCode}${phoneNumber}`
-            },
+            Payload: { phoneNumber: telePhoneNumber },
             signal: signal
         }).then((res) => {
-            this.setState({ loading : false })
-            console.log(res);
+            this.setState({ loading: false })
+            if (res.status === true) {
+                this.props.updatePhone(telePhoneNumber)
+            }
         }).catch((err) => {
-            this.setState({ loading : false })
+            this.setState({ loading: false })
         })
     }
 
@@ -84,6 +85,7 @@ class RegistrationForm extends Component {
                             onlyCountries={['NG', 'GH']}
                             onPhoneNumberChange={this.handlePhone}
                             value={phoneNumber}
+                            maxLenght={12}
                             disabled={loading}
                             separateDialCode={true}
                             inputClassName="form-control primary"
@@ -100,4 +102,4 @@ class RegistrationForm extends Component {
     }
 }
 
-export default connect((state) => ({ regProps : state.register }), {setStep})(RegistrationForm);
+export default connect((state) => ({ regProps: state.register }), { updatePhone })(RegistrationForm);

@@ -1,1 +1,2 @@
 export const SET_STEP = "SET_STEP";
+export const UPDATE_PHONENUMBER = "UPDATE_PHONENUMBER";
