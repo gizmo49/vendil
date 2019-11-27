@@ -4,20 +4,24 @@
     box-shadow: 0px 4px 40px rgba(1, 1, 1, 0.06);
     border-radius: 4px;
     margin: 20px 0;
-    padding: 10px 0;
-    padding-top: 20px;
+    padding: 25px 0;
+}
+
+.sweet--card--head{
+    padding: 20px 0;
 }
 
 .sweet--card--head h6 {
+    font-weight: bold;
     font-family: "matteomedium";
     font-size: 24px;
-    letter-spacing: 0.25px;
+    letter-spacing: -0.25px;
     color: #03332A;
     margin-bottom: 5px;
 }
 
 .sweet--card--head p {
-    font-size: 18px; 
+    font-size: 15px;
     font-weight: bolder;
     letter-spacing: 0.25px;
     color: #00D0BE;

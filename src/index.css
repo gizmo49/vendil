@@ -25,10 +25,11 @@ body {
 }
 
 .primary-form label{
-    font-weight: bolder;
+    /* font-weight: bolder; */
+    font-family: "matteomedium";
     font-size: 14.5px;
     line-height: 17px;
-    letter-spacing: 0.25px;
+    /* letter-spacing: 0.25px; */
     color: #356666;
 }
 
@@ -141,4 +142,6 @@ p.already a {
 
 .selected-dial-code{
     font-family: "matteomedium";
+    font-size: 15px;
+    color: #03332A;
 }

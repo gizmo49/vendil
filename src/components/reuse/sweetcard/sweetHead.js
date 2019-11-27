@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import "./index.css"
 
 class SweetHead extends Component {
 
     render = () => {
-        const { title, paragraph } = this.props;
+        const { title, paragraph } = this.props.info;
         return (
             <div className="sweet--card--head">
                 <div className="px-40">
@@ -18,10 +18,10 @@ class SweetHead extends Component {
 
 }
 
-SweetHead.propTypes = {
-    title: PropTypes.string,
-    paragraph: PropTypes.string
-};
+// SweetHead.propTypes = {
+//     title: PropTypes.string,
+//     paragraph: PropTypes.string
+// };
 
 
 export default SweetHead;

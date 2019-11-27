@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { Component } from "react";
+import {connect} from "react-redux";
 import TwitterBird from "../../../assests/img/twitterbird.svg";
 import SweetHead from "../../reuse/sweetcard/sweetHead";
 import SweetCard from "../../reuse/sweetcard";
 import CenterLogo from "../../base/CenterLogo";
-import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import Maybe from "../../base/Maybe/Maybe";
+import RenderRegInstace from "./RenderRegInstance";
 
 const TwiiterButton = () => (
     <a href="#!" className="btn btn-primary twitter-link">
@@ -13,34 +14,55 @@ const TwiiterButton = () => (
     </a>
 )
 
-const Register = () => {
+class Register extends Component {
 
-    useEffect(() => {
-        document.body.style.background = "#E0FAF8";
-    });
+    state = {
+        headings: [
+            {
+                id:1,
+                title: "Get Started",
+                paragraph: "Let’s get you all setup for vendly"
+            },
+            {
+                id:2,
+                title: "Verify your account",
+                paragraph: "Please enter the sms verification code sent to you"
+            }
+        ]
+    }
 
-    return (
-        <section className="h-100">
-            <div className="row justify-content-center align-items-center h-100">
-                <div className="col-xl-4 col-lg-6 col-md-6 col-sm-7 col-10">
-                    <SweetCard>
-                        <div className="my-4">
-                            <CenterLogo />
-                        </div>
-                        <SweetHead
-                            title="Get Started"
-                            paragraph="Let’s get you all setup for vendly" />
-                        <div className="px-40 py-3">
-                            <RegistrationForm />
-                            <Maybe />
-                            <TwiiterButton />
-                        </div>
-                    </SweetCard>
+    componentDidMount = () => document.body.style.background = "#E0FAF8";
+
+    getHeadInfo = () => {
+        const{ headings } = this.state;
+        const {regProps: { currentStep }} = this.props;
+        return (headings.find((x) => x.id === currentStep ));
+    }
+
+   
+    render = () => {
+        const {regProps: { currentStep }} = this.props;
+        
+        return (
+            <section className="h-100">
+                <div className="row justify-content-center align-items-center h-100">
+                    <div className="col-xl-4 col-lg-6 col-md-6 col-sm-7 col-10">
+                        <SweetCard>
+                            <div className="my-4">
+                                <CenterLogo />
+                            </div>
+                            <SweetHead info={this.getHeadInfo()} />
+                            <div className="px-40 py-3">
+                                {RenderRegInstace(currentStep)}
+                                <Maybe />
+                                <TwiiterButton />
+                            </div>
+                        </SweetCard>
+                    </div>
                 </div>
-            </div>
-        </section>
-    )
-
+            </section>
+        )
+    }
 }
 
-export default Register;
+export default connect((state) => ({ regProps : state.register }), null)(Register);
