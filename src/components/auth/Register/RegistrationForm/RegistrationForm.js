@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import IntlTelInput from 'react-intl-tel-input';
 import { updatePhone } from "../../../../actions/regAction";
-import AlertBox from "../../../utils/AlertBox/ALertBox";
-import Spinner from "../../../base/Spinner/Spinner";
 import { API } from "../../../../lib/api";
 import routes from "../../../../lib/api/routes";
+import AlertBox from "../../../utils/AlertBox/ALertBox";
+import Spinner from "../../../base/Spinner/Spinner";
+import IntlTelInput from 'react-intl-tel-input';
 import 'react-intl-tel-input/dist/main.css';
 
 

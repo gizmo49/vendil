@@ -65,14 +65,14 @@ input.form-control.primary::placeholder {
     letter-spacing: 0.8px;
     border-radius: 0px;
     color: #FFFFFF;
-    background-color: var(--main-fill-normal);
-    border-color: var(--main-fill-normal);
+    background-color: var(--main-fill-normal) !important;
+    border-color: var(--main-fill-normal) !important;
     width: 100%;
     text-transform: uppercase;
     padding-top: 10px;
     padding-bottom: 10px;
     outline: none;
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 /* Intl Telephone Input */
@@ -144,4 +144,12 @@ p.already a {
     font-family: "matteomedium";
     font-size: 15px;
     color: #03332A;
+}
+
+.border-bottom-none{
+    border-bottom: 0px !important;
+}
+
+input:focus ~ div.password-container {
+    border-color: var(--main-fill-normal);
 }
