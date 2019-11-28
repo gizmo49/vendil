@@ -1,5 +1,6 @@
 :root {
     --main-fill-normal: #00D0BE;
+    --border-input-error:#D00012;
 }
 
 html, body {
@@ -46,6 +47,11 @@ body {
     outline: none;
 }
 
+.form-control.primary.has-error,
+.form-control.primary.has-error:focus{
+    border-color: var(--border-input-error);
+}
+
 .form-control.primary:focus {
     border-color: var(--main-fill-normal);
 }
@@ -54,9 +60,13 @@ body {
     background: inherit;
 }
 
-input.form-control.primary::placeholder {
+.form-control.primary::placeholder {
     color: #576F7F;
     font-family: 'matteolight';
+}
+
+.form-control.primary.has-error::placeholder{
+    color: var(--border-input-error);
 }
 
 .btn.btn-primary {
@@ -148,8 +158,4 @@ p.already a {
 
 .border-bottom-none{
     border-bottom: 0px !important;
-}
-
-input:focus ~ div.password-container {
-    border-color: var(--main-fill-normal);
 }

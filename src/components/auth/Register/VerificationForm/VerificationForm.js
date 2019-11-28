@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setStep } from "../../../../actions/regAction";
 import { API } from "../../../../lib/api";
 import routes from "../../../../lib/api/routes";
+import Spinner from "../../../base/Spinner/Spinner";
 
 class VerificationForm extends Component {
 
@@ -21,10 +22,12 @@ class VerificationForm extends Component {
             Payload: { phoneNumber, otp },
             signal: this.controller.signal
         }).then((res) => {
+            this.setState({ loading: false })
             if (res.status === true) {
                 setStep(3)
             }
         }).catch((err) => {
+            this.setState({ loading: false })
             console.log(err)
         })
     }
@@ -38,12 +41,13 @@ class VerificationForm extends Component {
         e.preventDefault();
         const { otp } = this.state;
         if (otp.length > 4) {
+            this.setState({ loading: true })
             this.confirmOTP()
         }
     }
 
     render = () => {
-        const { otp } = this.state;
+        const { otp, loading } = this.state;
 
         return (
             <form onSubmit={this.handleSubmit} className="primary-form">
@@ -55,8 +59,10 @@ class VerificationForm extends Component {
                         className="form-control text-center primary"
                         placeholder="Enter Verification Code" />
                 </div>
-                <button className="btn btn-primary">
-                    Verify Your Account
+                <button 
+                    className="btn btn-primary"
+                    disabled={loading}>
+                    {(loading) ? <Spinner/> : "Verify Your Account"}
                 </button>
             </form>
         )

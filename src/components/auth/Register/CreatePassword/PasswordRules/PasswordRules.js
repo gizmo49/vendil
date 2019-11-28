@@ -1,10 +1,19 @@
 import React from "react";
 import "./PasswordRules.css";
 
-const PasswordRules = () => (
-    <div className="password-container">
-        <p>Password must contain <b>a letter</b> and <b>a number</b> , and be minimum of <b>6 characters</b></p>
+const PasswordRules = ({ ValidationResult }) => {
+
+    const errorClass = (num) => (ValidationResult && (ValidationResult).includes(num) ? "error" : "");
+
+    return (<div className="password-container">
+        <p className="mb-0">
+            Password must contain 
+            <b className={errorClass(1)}> a letter </b> and 
+            <b className={errorClass(2)}> a number </b> , and be minimum of 
+            <b className={errorClass(3)}> 6 characters</b>
+        </p>
     </div>
 )
+}
 
 export default PasswordRules;
