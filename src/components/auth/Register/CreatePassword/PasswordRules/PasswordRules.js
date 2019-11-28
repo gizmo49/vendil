@@ -8,9 +8,9 @@ const PasswordRules = ({ ValidationResult }) => {
     return (<div className="password-container">
         <p className="mb-0">
             Password must contain 
-            <b className={errorClass(1)}> a letter </b> and 
+            <b className={errorClass(1)}> a lower case letter </b> and 
             <b className={errorClass(2)}> a number </b> , and be minimum of 
-            <b className={errorClass(3)}> 6 characters</b>
+            <b className={errorClass(3)}> 8 characters</b>
         </p>
     </div>
 )

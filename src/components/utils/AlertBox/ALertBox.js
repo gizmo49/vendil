@@ -3,14 +3,18 @@ import PropTypes from "prop-types";
 import { Alert } from "antd";
 import "antd/dist/antd.css";
 
-const AlertBox = ({ message, description, type }) => {
+const AlertBox = ({ message, description, type, handleClose }) => {
     return (
-    <Alert
-        message={message}
-        description={description}
-        type={type}
-        closable
-        showIcon />)
+        <div className="mb-3">
+            <Alert
+                message={message}
+                description={description}
+                type={type}
+                afterClose={handleClose}
+                closable
+                showIcon />
+        </div>
+    )
 }
 
 AlertBox.propTypes = {

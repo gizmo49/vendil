@@ -1,7 +1,7 @@
 import {SET_STEP, UPDATE_PHONENUMBER} from "../actions/types";
 
 const initState = {
-    currentStep: 3,
+    currentStep: 1,
     phoneNumber:""
 }
 

@@ -4,14 +4,19 @@ import { setStep } from "../../../../actions/regAction";
 import { API } from "../../../../lib/api";
 import routes from "../../../../lib/api/routes";
 import Spinner from "../../../base/Spinner/Spinner";
+import AlertBox from "../../../utils/AlertBox/ALertBox";
 
 class VerificationForm extends Component {
 
     controller = new AbortController();
 
     state = {
-        otp: ""
+        otp: "",
+        showAlert: false,
+        alertdata: {},
     }
+
+    componentWillUnmount = () => this.controller.abort();
 
     confirmOTP = () => {
         const { otp } = this.state;
@@ -24,7 +29,18 @@ class VerificationForm extends Component {
         }).then((res) => {
             this.setState({ loading: false })
             if (res.status === true) {
-                setStep(3)
+                window.sessionStorage.setItem("temp_access_token", res.access_token);
+                setStep(3);
+            }else{
+                console.log(res)
+                this.setState({
+                    showAlert: true,
+                    alertdata: {
+                        type:"error",
+                        message: "Error!",
+                        description: res.message
+                    }
+                });
             }
         }).catch((err) => {
             this.setState({ loading: false })
@@ -40,31 +56,42 @@ class VerificationForm extends Component {
     handleSubmit = e => {
         e.preventDefault();
         const { otp } = this.state;
-        if (otp.length > 4) {
+        if (otp.length === 6 ) {
             this.setState({ loading: true })
             this.confirmOTP()
         }
     }
 
     render = () => {
-        const { otp, loading } = this.state;
+        const { otp, loading, alertdata, showAlert} = this.state;
+        const { message, description, type } = alertdata;
 
         return (
-            <form onSubmit={this.handleSubmit} className="primary-form">
-                <div className="form-group">
-                    <label>Verification Code</label>
-                    <input name="otp"
-                        value={otp}
-                        onChange={this.handleOtp}
-                        className="form-control text-center primary"
-                        placeholder="Enter Verification Code" />
-                </div>
-                <button 
-                    className="btn btn-primary"
-                    disabled={loading}>
-                    {(loading) ? <Spinner/> : "Verify Your Account"}
-                </button>
-            </form>
+            <>
+              {(showAlert) && <AlertBox
+                    message={message}
+                    description={description}
+                    type={type} 
+                    handleClose={() => this.setState({ showAlert: false })}
+                    />}
+                <form onSubmit={this.handleSubmit} className="primary-form">
+                    <div className="form-group">
+                        <label>Verification Code</label>
+                        <input name="otp"
+                            value={otp}
+                            maxLength={6}
+                            onChange={this.handleOtp}
+                            className="form-control text-center primary"
+                            placeholder="Enter Verification Code" 
+                            autoComplete="off" />
+                    </div>
+                    <button 
+                        className="btn btn-primary"
+                        disabled={loading}>
+                        {(loading) ? <Spinner/> : "Verify Your Account"}
+                    </button>
+                </form>
+            </>
         )
     }
 }
