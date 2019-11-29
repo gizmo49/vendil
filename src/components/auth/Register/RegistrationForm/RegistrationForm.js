@@ -42,9 +42,27 @@ class RegistrationForm extends Component {
             this.setState({ loading: false })
             if (res.status === true) {
                 this.props.updatePhone(telePhoneNumber)
+            }else{
+                this.setState({
+                    showAlert: true,
+                    loading: false,
+                    alertdata: {
+                        type:"error",
+                        message: "Error!",
+                        description: res.message
+                    }
+                });
             }
         }).catch((err) => {
-            this.setState({ loading: false })
+            this.setState({
+                showAlert: true,
+                loading: false,
+                alertdata: {
+                    type:"error",
+                    message: "Error!",
+                    description: "Unable to complete action"
+                }
+            });
         })
     }
 
@@ -75,7 +93,9 @@ class RegistrationForm extends Component {
                 {(showAlert) && <AlertBox
                     message={message}
                     description={description}
-                    type={type} />}
+                    type={type}
+                    handleClose={() => this.setState({ showAlert: false })}
+                     />}
 
                 <form onSubmit={this.HandleSubmit} className="primary-form">
                     <div className="form-group">

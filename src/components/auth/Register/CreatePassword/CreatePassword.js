@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import PasswordRules from "./PasswordRules/PasswordRules";
 import ValidatePassword from "./PasswordRules/validatePassword";
 import { API } from "../../../../lib/api";
 import routes from "../../../../lib/api/routes";
+import Spinner from "../../../base/Spinner/Spinner";
 
 class CreatePassword extends Component {
 
     controller = new AbortController();
 
     state = {
+        loading: false,
         password: "",
         ValidationResult: []
     }
@@ -20,16 +22,15 @@ class CreatePassword extends Component {
         const { password } = this.state;
         const { regProps: { phoneNumber } } = this.props;
         const access_token = window.sessionStorage.getItem("temp_access_token");
-        let request =  {
+        let request = {
             phoneNumber,
             access_token,
             password,
-            confirmPassword: password
         }
         API({
             MethodType: 'POST',
             RequestUri: routes.setPassword,
-            Payload: {...request},
+            Payload: { ...request },
             signal: this.controller.signal
         }).then((res) => {
             console.log(res);
@@ -41,7 +42,7 @@ class CreatePassword extends Component {
 
     handlePassword = e => {
         const { value } = e.target;
-        this.setState({ 
+        this.setState({
             "password": value,
             "ValidationResult": []
         })
@@ -56,7 +57,8 @@ class CreatePassword extends Component {
     }
 
     render = () => {
-        const { password, ValidationResult} = this.state;
+        
+        const { password, ValidationResult, loading } = this.state;
 
         return (
             <form onSubmit={this.handleSubmit} className="primary-form">
@@ -68,12 +70,15 @@ class CreatePassword extends Component {
                         onChange={this.handlePassword}
                         type="password"
                         maxLength="50"
-                        className={"form-control primary border-bottom-none " + ( ((ValidationResult).length > 1) && "has-error" )}
+                        className={"form-control primary border-bottom-none " + (((ValidationResult).length > 1) && "has-error")}
                         placeholder="Create password" />
-                    <PasswordRules ValidationResult={ValidationResult}/>
+                    <PasswordRules ValidationResult={ValidationResult} />
                 </div>
-                <button className="btn btn-primary">
-                    Create Password
+
+                <button
+                    className="btn btn-primary"
+                    disabled={loading}>
+                    {(loading) ? <Spinner /> : "Create Password"}
                 </button>
             </form>
         )

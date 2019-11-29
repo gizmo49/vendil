@@ -31,10 +31,10 @@ class VerificationForm extends Component {
             if (res.status === true) {
                 window.sessionStorage.setItem("temp_access_token", res.access_token);
                 setStep(3);
-            }else{
-                console.log(res)
+            } else{
                 this.setState({
                     showAlert: true,
+                    loading: false,
                     alertdata: {
                         type:"error",
                         message: "Error!",
@@ -43,8 +43,15 @@ class VerificationForm extends Component {
                 });
             }
         }).catch((err) => {
-            this.setState({ loading: false })
-            console.log(err)
+            this.setState({
+                showAlert: true,
+                loading: false,
+                alertdata: {
+                    type:"error",
+                    message: "Error!",
+                    description: "Unable to complete action"
+                }
+            });
         })
     }
 
