@@ -34,15 +34,13 @@ class Register extends Component {
                 <div className="row justify-content-center align-items-center h-100">
                     <div className="col-xl-4 col-lg-6 col-md-6 col-sm-7 col-10">
                         <SweetCard>
-                            <div className="my-4">
-                                <CenterLogo />
-                            </div>
+                            <CenterLogo />
                             <SweetHead info={this.getHeadInfo()} />
                             <div className="px-40 py-3">
                                 {RenderRegInstace(currentStep)}
                                 <Maybe />
                                 <TwiiterButton />
-                                <p className="basil">Already have an account? <Link to={'/sign-in'}>create account here</Link></p>
+                                <p className="basil">Already have an account? <Link to={'/sign-in'}>Sign in here</Link></p>
                             </div>
                         </SweetCard>
                     </div>
