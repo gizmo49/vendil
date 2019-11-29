@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 import headings from "./data";
 import TwitterBird from "../../../assests/img/twitterbird.svg";
 import SweetHead from "../../reuse/sweetcard/sweetHead";
@@ -41,6 +42,7 @@ class Register extends Component {
                                 {RenderRegInstace(currentStep)}
                                 <Maybe />
                                 <TwiiterButton />
+                                <p className="basil">Already have an account? <Link to={'/sign-in'}>create account here</Link></p>
                             </div>
                         </SweetCard>
                     </div>

@@ -117,6 +117,18 @@ p.already a {
     text-decoration: underline;
 }
 
+p.basil {
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+p.basil a{
+    font-weight: bolder;
+    color: #00D0BE;
+}
+
 /* Simple chunks of dashboard styling */
 #content {
     min-height: 100vh;

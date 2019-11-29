@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from "history";
+import ProtectedRoute from './components/routesComps/ProtectedRoute';
 import Landing from "./components/dashboard/landing";
 import Register from './components/auth/Register/Register';
 import Login from './components/auth/Login/Login';
@@ -19,7 +20,7 @@ export default class App extends Component {
           <Switch>
             <Route path="/sign-up" component={Register} />
             <Route path="/sign-in" component={Login} />
-            <Route component={Landing} />
+            <ProtectedRoute component={Landing} />
             <Route exact path="*" render={() => <NotFound />} />
           </Switch>
         </Router>

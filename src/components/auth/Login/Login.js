@@ -22,8 +22,10 @@ export default class Login extends Component {
                             <div className="my-4">
                                 <CenterLogo />
                             </div>
-                            <SweetHead title="Welcome Back"
-                                paragraph="Sign Into Your Account" />
+                            <SweetHead info={{
+                                title: "Welcome Back",
+                                paragraph: "Sign Into Your Account"
+                            }} />
 
                             <div className="px-40 py-3">
                                 <div className="primary-form">
@@ -54,6 +56,7 @@ export default class Login extends Component {
                                     <img src={TwitterBird} alt="twt" />
                                     <span>Login with twitter</span>
                                 </a>
+                                <p className="basil">Don't have an account? <Link to={'/sign-up'}>create account here</Link></p>
                             </div>
                         </SweetCard>
 

@@ -39,7 +39,6 @@ class RegistrationForm extends Component {
             Payload: { phoneNumber: telePhoneNumber },
             signal: signal
         }).then((res) => {
-            this.setState({ loading: false })
             if (res.status === true) {
                 this.props.updatePhone(telePhoneNumber)
             }else{
