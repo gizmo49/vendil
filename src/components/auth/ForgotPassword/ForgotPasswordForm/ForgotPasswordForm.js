@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import {connect} from "react-redux";
+import { updatePhone } from "../../../../actions/forgotPasswordActions";
 import { API } from "../../../../lib/api";
 import routes from "../../../../lib/api/routes";
 import AlertBox from "../../../utils/AlertBox/ALertBox";
@@ -37,7 +39,7 @@ class ForgotPasswordForm extends Component {
             signal: signal
         }).then((res) => {
             if (res.status === true) {
-                console.log(res)
+                this.props.updatePhone(telePhoneNumber)
             }else{
                 this.setState({
                     showAlert: true,
@@ -119,4 +121,4 @@ class ForgotPasswordForm extends Component {
 
 }
 
-export default ForgotPasswordForm;
+export default connect((state) => ({ regProps: state.forgotPassword }), { updatePhone })(ForgotPasswordForm);
