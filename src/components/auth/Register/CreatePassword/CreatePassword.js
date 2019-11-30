@@ -15,12 +15,14 @@ class CreatePassword extends Component {
         showAlert: false,
         loading: false,
         password: "",
+        alertdata: {},
         ValidationResult: []
     }
 
     componentWillUnmount = () => this.controller.abort();
 
     CreatePassword = () => {
+        this.setState({ loading: true });
         const { password } = this.state;
         const { regProps: { phoneNumber } } = this.props;
         const access_token = window.sessionStorage.getItem("temp_access_token");
@@ -35,9 +37,11 @@ class CreatePassword extends Component {
             Payload: { ...request },
             signal: this.controller.signal
         }).then((res) => {
-            if(res.status === true){
-                console.log(res);
-                console.log(`success`);
+            this.setState({ loading: false })
+            if((res.status === true) && (res.token)){
+                window.sessionStorage.removeItem("temp_access_token");
+                window.sessionStorage.setItem("authUser", res.token);
+                this.props.history.push("/dashboard/home");
             }else {
                 this.setState({
                     showAlert: true,

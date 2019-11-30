@@ -27,7 +27,7 @@ class Register extends Component {
 
    
     render = () => {
-        const {regProps: { currentStep }} = this.props;
+        const {regProps: { currentStep}, history } = this.props;
 
         return (
             <section className="h-100">
@@ -37,7 +37,7 @@ class Register extends Component {
                             <CenterLogo />
                             <SweetHead info={this.getHeadInfo()} />
                             <div className="px-40 py-3">
-                                {RenderRegInstace(currentStep)}
+                                {RenderRegInstace(currentStep, history)}
                                 <Maybe />
                                 <TwiiterButton />
                                 <p className="basil">Already have an account? <Link to={'/sign-in'}>Sign in here</Link></p>

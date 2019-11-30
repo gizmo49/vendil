@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 import ProtectedRoute from './components/routesComps/ProtectedRoute';
+import PublicRoute from './components/routesComps/PublicRoute';
 import Landing from "./components/dashboard/landing";
 import Register from './components/auth/Register/Register';
 import Login from './components/auth/Login/Login';
+import ForgotPassword from './components/auth/ForgotPassword/ForgotPassword';
 import "./assests/css/fonts.css";
 import "./index.css";
 
@@ -18,8 +20,9 @@ export default class App extends Component {
       <>
         <Router history={hist}>
           <Switch>
-            <Route path="/sign-up" component={Register} />
-            <Route path="/sign-in" component={Login} />
+            <PublicRoute path="/sign-up" component={Register} />
+            <PublicRoute path="/sign-in" component={Login} />
+            <PublicRoute path="/forgot-password" component={ForgotPassword} />
             <ProtectedRoute component={Landing} />
             <Route exact path="*" render={() => <NotFound />} />
           </Switch>

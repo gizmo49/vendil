@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
 import IntlTelInput from 'react-intl-tel-input';
 import Spinner from "../../../base/Spinner/Spinner";
 import AlertBox from "../../../utils/AlertBox/ALertBox";
@@ -22,16 +23,30 @@ class LoginForm extends Component {
     LogUser = () => {
         const {dialCode, phoneNumber, password} = this.state;
         const { signal } = this.controller;
+        this.setState({ loading: true });
         API({
+            signal,
             MethodType: 'POST',
             RequestUri: routes.phoneLogin,
             Payload: {
                 phoneNumber: `+${dialCode}${phoneNumber}`,
                 password
-            },
-            signal
+            }
         }).then((res) => {
-            console.log(res)
+            if(res.status && res.token){
+                window.sessionStorage.setItem("authUser", res.token);
+                this.props.history.push("/dashboard/home");
+            } else {
+                this.setState({
+                    showAlert: true,
+                    loading: false,
+                    alertdata: {
+                        type:"error",
+                        message: "Error!",
+                        description: res.message
+                    }
+                });
+            }
         }).catch((err) => {
             console.log(err)
         })
@@ -137,4 +152,4 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);

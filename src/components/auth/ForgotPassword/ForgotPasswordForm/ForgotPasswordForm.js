@@ -1,6 +1,4 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { updatePhone } from "../../../../actions/regAction";
+import React, {Component} from "react";
 import { API } from "../../../../lib/api";
 import routes from "../../../../lib/api/routes";
 import AlertBox from "../../../utils/AlertBox/ALertBox";
@@ -8,9 +6,8 @@ import Spinner from "../../../base/Spinner/Spinner";
 import IntlTelInput from 'react-intl-tel-input';
 import 'react-intl-tel-input/dist/main.css';
 
-
-class RegistrationForm extends Component {
-
+class ForgotPasswordForm extends Component {
+    
     controller = new AbortController();
     _isMounted = false;
 
@@ -35,12 +32,12 @@ class RegistrationForm extends Component {
 
         API({
             MethodType: 'POST',
-            RequestUri: routes.sendOtp,
+            RequestUri: routes.forgotPassword,
             Payload: { phoneNumber: telePhoneNumber },
             signal: signal
         }).then((res) => {
             if (res.status === true) {
-                this.props.updatePhone(telePhoneNumber)
+                console.log(res)
             }else{
                 this.setState({
                     showAlert: true,
@@ -113,12 +110,13 @@ class RegistrationForm extends Component {
                     <button
                         className="btn btn-primary"
                         disabled={loading}>
-                        {(loading) ? <Spinner /> : "continue"}
+                        {(loading) ? <Spinner /> : "send one time password (otp)"}
                     </button>
                 </form>
             </>
         )
     }
+
 }
 
-export default connect((state) => ({ regProps: state.register }), { updatePhone })(RegistrationForm);
+export default ForgotPasswordForm;

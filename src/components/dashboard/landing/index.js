@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import IconBar from "../iconbar";
 import routes from "../routes";
 
-const NotFound = () => (<h6 className="text-center">404</h6>);
+// const NotFound = () => (<h6 className="text-center">404</h6>);
 
 const hist = createBrowserHistory();
 
@@ -22,7 +22,8 @@ class Landing extends Component {
                         <div id="content">
                             <Switch>
                                 {RoutesWithSubRoutes(routes)}
-                                <Route exact path="*" render={() => <NotFound />} />
+                                {/* <Route exact path="*" render={() => <NotFound />} /> */}
+                                <Route exact path="*" render={() => <Redirect to="/" />} />
                             </Switch>
                         </div>
                     </>

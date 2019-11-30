@@ -3,15 +3,15 @@ import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import VerificationForm from "./VerificationForm/VerificationForm";
 import CreatePassword from "./CreatePassword/CreatePassword";
 
-export default (step) => {
+export default (step, history) => {
     switch (step) {
         case 1:
-            return <RegistrationForm />
+            return <RegistrationForm history={history}/>
         case 2: 
-            return <VerificationForm />
+            return <VerificationForm  history={history}/>
         case 3: 
-            return <CreatePassword />
+            return <CreatePassword  history={history}/>
         default:
-            return <RegistrationForm />
+            return <RegistrationForm  history={history} />
     }
 }

@@ -34,7 +34,7 @@ export default class Login extends Component {
                                     <img src={TwitterBird} alt="twt" />
                                     <span>Login with twitter</span>
                                 </a>
-                                <p className="basil">Don't have an account? <Link to={'/sign-up'}>create account here</Link></p>
+                                <p className="basil">Don't have an account? <a href={'/sign-up'}>create account here</a></p>
                             </div>
 
                         </SweetCard>
