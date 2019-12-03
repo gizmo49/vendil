@@ -35,9 +35,9 @@ body {
 }
 
 .form-control.primary {
-    color: #03332A;
+    color: #00332a;
     font-family: "matteomedium";
-    font-size: 15px;
+    font-size: 16px;
     padding-top: 20px;
     padding-bottom: 20px;
     /* letter-spacing: -0.4px; */
@@ -61,7 +61,8 @@ body {
 }
 
 .form-control.primary::placeholder {
-    color: #576F7F;
+    /* color: #576F7F; */
+    color: #00d0be;
     font-family: 'matteolight';
 }
 
@@ -78,7 +79,7 @@ body {
     background-color: var(--main-fill-normal) !important;
     border-color: var(--main-fill-normal) !important;
     width: 100%;
-    text-transform: uppercase;
+    text-transform: capitalize;
     padding-top: 10px;
     padding-bottom: 10px;
     outline: none;

@@ -13,7 +13,7 @@ export default [
     {
         iconName: "block",
         title: "Dashboard",
-        path: '/dashboard',
+        path: '/dashboard/home',
         component: TabSystem,
         routes: [
             {

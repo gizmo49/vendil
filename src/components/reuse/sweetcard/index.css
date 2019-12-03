@@ -14,14 +14,14 @@
 .sweet--card--head h6 {
     font-weight: bold;
     font-family: "matteomedium";
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: -0.25px;
     color: #03332A;
     margin-bottom: 5px;
 }
 
 .sweet--card--head p {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bolder;
     letter-spacing: 0.25px;
     color: #00D0BE;

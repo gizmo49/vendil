@@ -2,8 +2,8 @@
     position: fixed;
     padding: 20px;
     height: 100%;
-    background: #004B40;
-    box-shadow: 1px 0px 25px rgba(0, 0, 0, 0.04);
+    background: #00D0BE;
+    box-shadow: 0px 0px 15px rgba(10, 9, 9, 0.08);
 }
 
 .menu ul li {
