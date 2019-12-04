@@ -2,7 +2,6 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import TabSystem from "../TabSystem";
 import DashboardHome from "../DashboardHome";
-import DashboardTranscations from "../DashboardTranscations";
 
 const SuperVend = () => (<h6>super vend</h6>);
 const OutwardVend = () => (<h6> vend outwards </h6>);
@@ -29,7 +28,7 @@ export default [
             },
             {
                 path: '/dashboard/transcations',
-                component: DashboardTranscations,
+                component: DashboardHome,
                 tab: 'Transcations',
                 tabIcon: 'card'
             }
