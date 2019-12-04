@@ -12,7 +12,7 @@ class SideNavIconBar extends Component {
         return (
             <nav id="sidebar">
                 <div className="row">
-                    <div className="col-4 pr-0">
+                    <div className="col-4">
                         <Iconbar />
                     </div>
                     <div className="col-8">
@@ -29,7 +29,7 @@ class SideNavIconBar extends Component {
 
 
 const ConditionalSideBar = ({ routes }) => (
-    <ul className="list-unstyled tabs-ul ">
+    <ul className="list-unstyled tabs-ul mt-5">
         {routes.filter(route => route.tab).map(({ path, tab, tabIcon }, i) => (
             <li key={`tab_${i}`} >
                 <NavTab to={path}>

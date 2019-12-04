@@ -1,5 +1,5 @@
 #sidebar {
-    width: 250px;
+    width: 300px;
     position: fixed;
     top: 0;
     left: 0;
@@ -7,15 +7,15 @@
     z-index: 999;
     background: #FCFDFD;
     color: #fff;
-    transition: all 0.3s;
+    transition: all 0.6s;
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -300px;
 }
 
 #content {
-    width: calc(100% - 250px);
+    width: calc(100% - 300px);
     padding: 0px;
     min-height: 100vh;
     transition: all 0.3s;
@@ -49,7 +49,7 @@
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -300px;
     }
     #sidebar.active {
         margin-left: 0;
@@ -60,4 +60,38 @@
     #sidebarCollapse span {
         display: none;
     }
+}
+
+/* SideBar on ordered list */
+ul.tabs-ul {
+    padding-left: 10px;
+}
+
+ul.tabs-ul li{
+    margin-bottom: 25px;
+}
+
+ul.tabs-ul li a.nav-tab {
+    font-family: "matteomedium";
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.25px;
+    text-decoration: none;
+    color: #98A0AA;
+    display: flex;
+    align-items: center;
+}
+
+ul.tabs-ul li a.nav-tab.active {
+    color: #00100F;
+}
+
+ul.tabs-ul li a.nav-tab i.vendIcon{
+    background-color: #98A0AA;
+    margin-right: 20px;
+    transform: scale(1.15);
+}
+
+ul.tabs-ul li a.nav-tab.active i.vendIcon{
+    background-color: var(--main-fill-normal);
 }
