@@ -12,13 +12,18 @@ body {
     background: #F8F8F8;
 }
 
+#vendil {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
 .px-40 {
     padding-left: 40px;
     padding-right: 40px;
-}
-
-#vendil {
-    height: 100%;
 }
 
 .primary-form .form-group {
@@ -130,15 +135,6 @@ p.basil a{
     color: #00D0BE;
 }
 
-/* Simple chunks of dashboard styling */
-#content {
-    min-height: 100vh;
-    padding: 20px 0;
-    padding-top: 40px;
-    background: #FDFDFE;
-    width: calc(100% - 150px);
-    margin: auto;
-}
 
 .btn{
     outline: none;

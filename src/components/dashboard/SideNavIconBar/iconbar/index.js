@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { NavLink, withRouter } from 'react-router-dom';
-import V from "../../../assests/img/v.svg";
-import {Icon} from "../icons";
-import routes from "../routes";
+import { Icon } from "../../icons";
+import routes from "../../routes";
+import V from "../../../../assests/img/v.svg";
 import "./index.css";
 
 class IconBar extends Component {
@@ -11,7 +11,7 @@ class IconBar extends Component {
 
         return (
             <div className="menu">
-                
+
                 <div className="vend--center">
                     <img src={V} alt="V" />
                 </div>
@@ -24,12 +24,12 @@ class IconBar extends Component {
                                 <NavLink to={item.path}
                                     className="icon-link"
                                     activeClassName="active">
-                                    <Icon name={item.iconName}/>
+                                    <Icon name={item.iconName} />
                                 </NavLink>
                             </li>
                         ))
                     }
-                    
+
                 </ul>
             </div>
         )
