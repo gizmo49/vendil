@@ -1,0 +1,28 @@
+.btn.switchBar {
+    position: absolute;
+    top: 10%;
+    left: -12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+    z-index: 2147483647;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.switchBar.active {
+    left: 0px;
+}
+
+.btn.switchBar.active img {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+}
+
+

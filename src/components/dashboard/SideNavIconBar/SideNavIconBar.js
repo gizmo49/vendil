@@ -12,10 +12,10 @@ class SideNavIconBar extends Component {
         return (
             <nav id="sidebar">
                 <div className="row">
-                    <div className="col-3 pr-0">
+                    <div className="col-4 pr-0">
                         <Iconbar />
                     </div>
-                    <div className="col-9">
+                    <div className="col-8">
                         <Switch>
                             {SideBarRoutes(routes)}
                         </Switch>
