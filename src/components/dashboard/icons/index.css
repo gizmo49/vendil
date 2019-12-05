@@ -30,7 +30,7 @@
     mask: url(./files/lend.svg) no-repeat center;
 }
 
-.vendIcon.card {
+.vendIcon.credit-card {
     -webkit-mask: url(./files/card.svg) no-repeat center;
     mask: url(./files/card.svg) no-repeat center;
 }

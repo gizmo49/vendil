@@ -30,7 +30,7 @@ export default [
                 path: '/dashboard/transcations',
                 component: DashboardHome,
                 tab: 'Transcations',
-                tabIcon: 'card'
+                tabIcon: 'credit-card'
             }
         ]
     },

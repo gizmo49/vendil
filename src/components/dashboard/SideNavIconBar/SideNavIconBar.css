@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     height: 100vh;
-    z-index: 999;
+    /* z-index: 999; */
     background: #FCFDFD;
     color: #fff;
     transition: all 0.6s;
@@ -63,19 +63,34 @@
 }
 
 /* SideBar on ordered list */
+div#subSideMenu{
+    padding: 15px;
+    margin: 10px 0;
+}
+
+div#subSideMenu div.brand-img {
+    height: 40px;
+    display:table-cell;
+    vertical-align:middle;
+}
+
 ul.tabs-ul {
-    padding-left: 10px;
+    margin-top: 30px;
+    /* padding-left: 10px;  */
 }
 
 ul.tabs-ul li{
-    margin-bottom: 25px;
+    height: 40px;
+    display:flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 ul.tabs-ul li a.nav-tab {
     font-family: "matteomedium";
     font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 0.25px;
+    font-weight: bolder;
+    /* letter-spacing: 0.15px; */
     text-decoration: none;
     color: #98A0AA;
     display: flex;
@@ -88,8 +103,8 @@ ul.tabs-ul li a.nav-tab.active {
 
 ul.tabs-ul li a.nav-tab i.vendIcon{
     background-color: #98A0AA;
-    margin-right: 20px;
-    transform: scale(1.15);
+    margin-right: 18px;
+    -webkit-mask-size: inherit;
 }
 
 ul.tabs-ul li a.nav-tab.active i.vendIcon{
