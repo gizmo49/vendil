@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import DashboardHome from "../components/DashboardHome/DashboardHome";
 import TabSystem from "../TabSystem";
-import DashboardHome from "../DashboardHome";
 
 const SuperVend = () => (<h6>super vend</h6>);
 const OutwardVend = () => (<h6> vend outwards </h6>);
