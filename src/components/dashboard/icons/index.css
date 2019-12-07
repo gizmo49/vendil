@@ -39,3 +39,33 @@
     -webkit-mask: url(./files/bell.svg) no-repeat center;
     mask: url(./files/bell.svg) no-repeat center;
 }
+
+.vendIcon.helper {
+    -webkit-mask: url(./files/helper.svg) no-repeat center;
+    mask: url(./files/helper.svg) no-repeat center;
+}
+
+.vendIcon.acc-circle {
+    -webkit-mask: url(./files/acc-circle.svg) no-repeat center;
+    mask: url(./files/acc-circle.svg) no-repeat center;
+}
+
+.vendIcon.lock {
+    -webkit-mask: url(./files/lock.svg) no-repeat center;
+    mask: url(./files/lock.svg) no-repeat center;
+}
+
+.vendIcon.acc-switch {
+    -webkit-mask: url(./files/switch.svg) no-repeat center;
+    mask: url(./files/switch.svg) no-repeat center;
+}
+
+.vendIcon.gift {
+    -webkit-mask: url(./files/gift.svg) no-repeat center;
+    mask: url(./files/gift.svg) no-repeat center;
+}
+
+.vendIcon.settings {
+    -webkit-mask: url(./files/settings.svg) no-repeat center;
+    mask: url(./files/settings.svg) no-repeat center;
+}

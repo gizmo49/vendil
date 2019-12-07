@@ -1,0 +1,15 @@
+.avatar-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: #DDFAF8;
+    border: 1px solid #B3F1EC;
+}
+
+.avatar-container img{
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+}

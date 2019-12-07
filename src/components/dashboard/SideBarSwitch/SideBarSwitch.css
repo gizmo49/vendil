@@ -1,7 +1,7 @@
 .btn.switchBar {
-    position: absolute;
+    position: sticky;
     top: 10%;
-    left: -12px;
+    margin-left: -12px;
     width: 24px;
     height: 24px;
     border-radius: 50%;

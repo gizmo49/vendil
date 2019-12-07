@@ -40,8 +40,24 @@ body {
     font-family: "matteomedium";
     font-size: 14.5px;
     line-height: 17px;
+    margin-bottom: 10px;
     /* letter-spacing: 0.25px; */
     color: #356666;
+}
+
+.form-summary h6{
+    font-family: "matteomedium";
+    font-weight: 600;
+    font-size: 18px;
+    color: #03332A;
+}
+
+.form-summary p {
+    font-weight: 300;
+    font-size: 15.2px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #3F7676;
 }
 
 .form-control.primary {

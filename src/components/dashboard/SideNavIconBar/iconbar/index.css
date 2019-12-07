@@ -4,10 +4,15 @@
     height: 100vh;
     background: #00D0BE;
     box-shadow: 0px 0px 15px rgba(10, 9, 9, 0.08);
+
+    /* Flex */
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .menu ul li {
-    margin: 30px 0;
+    margin-bottom: 30px;
 }
 
 .vend--center {
@@ -39,4 +44,16 @@ a.icon-link:hover{
 
 a.icon-link.active {
     background: rgba(255, 255, 255, 0.6);
+}
+
+.bottomActions{
+    margin-top: auto;
+}
+
+.bottomActions ul{
+    text-align: center;
+}
+
+.bottomActions ul li{
+    margin-bottom: 20px;
 }

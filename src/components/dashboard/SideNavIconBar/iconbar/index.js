@@ -4,6 +4,7 @@ import { Icon } from "../../icons";
 import routes from "../../routes";
 import V from "../../../../assests/img/v.svg";
 import "./index.css";
+import UserAvatar from "../UserAvatar/UserAvatar";
 
 class IconBar extends Component {
 
@@ -21,16 +22,38 @@ class IconBar extends Component {
                     {
                         (routes).map((item, key) => (
                             <li key={key}>
-                                <NavLink to={item.path}
-                                    className="icon-link"
-                                    activeClassName="active">
-                                    <Icon name={item.iconName} />
-                                </NavLink>
+                                {
+                                    !(item.hideElement) && (<NavLink to={item.path}
+                                        className="icon-link"
+                                        activeClassName="active">
+                                        <Icon name={item.iconName} />
+                                    </NavLink>)
+                                }
                             </li>
                         ))
                     }
 
                 </ul>
+
+                <div className="bottomActions">
+
+                    <ul className="list-unstyled">
+                        <li>
+                            <a href="#!">
+                                <Icon name="bell" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!">
+                                <Icon name="helper" />
+                            </a>
+                        </li>
+                        <li>
+                            <UserAvatar imgSrc="https://i.ibb.co/61bZbVq/Mask-Group.png" />
+                        </li>
+                    </ul>
+
+                </div>
             </div>
         )
 
