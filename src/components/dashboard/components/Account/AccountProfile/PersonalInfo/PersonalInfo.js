@@ -1,6 +1,31 @@
 import React, { Component } from "react";
+import Select from "react-select";
+import { SelectStyles } from "../../../../../../styles/SelectStyles";
 
 class PersonalInfo extends Component {
+
+    state = {
+        genders: [
+            {
+                label: "Male",
+                value: "male"
+            },
+            {
+                label: "Female",
+                value: "female"
+            }
+        ],
+        countries: [
+            {
+                label: "Nigeria",
+                value: "Nigeria"
+            },
+            {
+                label: "Ghana",
+                value: "Ghana"
+            }
+        ]
+    }
 
     render = () => {
         return (
@@ -33,6 +58,7 @@ class PersonalInfo extends Component {
                             </div>
                         </div>
                     </div>
+
                     <div className="row">
                         <div className="col-lg-4">
                             <div className="form-summary">
@@ -52,6 +78,69 @@ class PersonalInfo extends Component {
                         </div>
                     </div>
 
+                    <div className="row">
+                        <div className="col-lg-4">
+                            <div className="form-summary">
+                                <h6>Sex</h6>
+                                <p>tell us about your gender</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-8">
+                            <div className="form-row">
+                                <div className="col-lg-6">
+                                    <div className="form-group">
+                                        <label>Sex/Gender</label>
+                                        <Select
+                                        name="gender"
+                                        // onChange={this.handleSelect}
+                                        isSearchable={false}
+                                        styles={SelectStyles()}
+                                        placeholder={''}
+                                        options={this.state.genders} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-lg-4">
+                            <div className="form-summary">
+                                <h6>Country</h6>
+                                <p>Tell us your country of residence </p>
+                            </div>
+                        </div>
+                        <div className="col-lg-8">
+                            <div className="form-row">
+                                <div className="col-lg-6">
+                                    <div className="form-group">
+                                        <label>Country</label>
+                                        <Select
+                                        name="country"
+                                        isSearchable={false}
+                                        styles={SelectStyles()}
+                                        placeholder={''}
+                                        options={this.state.countries} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-lg-4">
+                        </div>
+                        <div className="col-lg-8">
+                            <div className="form-row">
+                                <div className="col-lg-6">
+                                    <button className="btn btn-primary">
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         )
