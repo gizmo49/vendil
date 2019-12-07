@@ -32,6 +32,17 @@ class PersonalInfo extends Component {
             <div>
                 <div className="primary-form mt-5">
                     <div className="row">
+                    <div className="col-lg-4">
+                            <div className="form-summary">
+                                <h6>Upload Profile Image</h6>
+                                <p>Choose a new avatar to be used across Vendly</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-8">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div className="row">
                         <div className="col-lg-4">
                             <div className="form-summary">
                                 <h6>Full Name</h6>
