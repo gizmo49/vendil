@@ -1,0 +1,23 @@
+div.welcome-user {
+    padding: 35px;
+    background:#E0FAF8;
+    background-image: url(./screen.svg), url(./stripes.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0% 50%, -10% 0;
+    background-size: contain, initial;
+}
+
+div.welcome-user div.welcome-text h6{
+    font-family: "matteomedium";
+    font-weight: bolder;
+    font-size: 18px;
+    color: #03332A;
+}
+
+div.welcome-user div.welcome-text p {
+    color: #3F7676;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.25px;
+}
+

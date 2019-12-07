@@ -1,0 +1,15 @@
+.empty-transcations{
+    min-height: 400px;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-transcations p{
+    font-weight: 700;
+    font-size: 16.4px;
+    color: #808080;
+    opacity: 0.6;
+}

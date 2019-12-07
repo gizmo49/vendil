@@ -1,0 +1,28 @@
+.block-transcations {
+    margin-top: 50px;
+    height: 100%;
+    padding: 20px;
+    background: #FEFFFF;
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.04);
+    border-radius: 2px;
+}
+/* 
+.block-transcations .block-head {
+  
+} */
+
+.block-transcations .block-head h6{
+    font-family: "matteomedium";
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    color: #03332A;
+}
+
+.block-transcations .block-head p{
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.15px;
+    line-height: 16px;
+    color: #3F7676;
+}

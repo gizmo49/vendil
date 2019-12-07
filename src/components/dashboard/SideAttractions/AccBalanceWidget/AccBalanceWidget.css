@@ -1,0 +1,24 @@
+.the_balance {
+    text-align: center;
+    color: #ffffff;
+    padding: 35px;
+    margin-top: 20px;
+    border-radius: 4px 4px 0px 0px;    
+    background: #00D0BE;
+}
+
+.the_balance h2{
+    color: #ffffff;
+}
+
+.the_balance h2 span {
+    font-family: "matteomedium";
+    font-size: 40px;
+}
+
+.the_balance h2 sup {
+    margin-right: 5px;
+}
+.the_balance h2 sub {
+    font-family: "matteomedium";
+}

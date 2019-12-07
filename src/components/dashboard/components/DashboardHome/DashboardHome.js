@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import WelcomeUser from './WelcomeUser/WelcomeUser';
+import RecentTranscations from './RecentTranscations/RecentTranscations';
 
 class DashboardHome extends Component {
 
     render = () => {
         return (
-            <h1>Dashboar Home</h1>
+            <div className="container mt-5">
+                <WelcomeUser />
+                <RecentTranscations/>
+            </div>
         )
     }
 }
 
-export default DashboardHome
+export default DashboardHome;
