@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Select from "react-select";
 import { SelectStyles } from "../../../../../../styles/SelectStyles";
+import BreadCrumb from "../../../../../utils/BreadCrumb/BreadCrumb";
 
 class PersonalInfo extends Component {
 
@@ -30,6 +31,7 @@ class PersonalInfo extends Component {
     render = () => {
         return (
             <div>
+                <BreadCrumb />
                 <div className="primary-form mt-5">
                     <div className="row">
                     <div className="col-lg-4">
@@ -144,7 +146,7 @@ class PersonalInfo extends Component {
                         <div className="col-lg-8">
                             <div className="form-row">
                                 <div className="col-lg-6">
-                                    <button className="btn btn-primary">
+                                    <button className="btn btn-primary btn--secondary">
                                         Save Changes
                                     </button>
                                 </div>

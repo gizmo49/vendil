@@ -7,6 +7,7 @@ export default class SideBarSwitch extends Component {
 
     componentDidMount() {
         $("#BigsidebarCollapse").click(() => {
+            console.log("got clicked");
             $("#BigsidebarCollapse").toggleClass('active')
             $("#sidebar").toggleClass("active");
             $("#content").toggleClass("active");

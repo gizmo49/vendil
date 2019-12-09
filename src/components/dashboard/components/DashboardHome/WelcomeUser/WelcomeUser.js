@@ -4,8 +4,8 @@ import "./WelcomeUser.css";
 const WelcomeUser = () => (
     <div className="welcome-user">
         <div className="row">
-            <div className="col-4"></div>
-            <div className="col-8">
+            <div className="col-lg-4"></div>
+            <div className="col-lg-8">
                 <div className="welcome-text">
                     <h6>Welcome to Vendly!</h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolore.</p>

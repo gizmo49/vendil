@@ -7,11 +7,25 @@ html, body {
     height: 100%;
 }
 
+/* 
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+} */
+
 body {
     font-family: 'matteolight';
     background: #F8F8F8;
 }
-
+.btn{
+    outline: none !important;
+    box-shadow: none !important;
+}
 #vendil {
     height: 100%;
 }
@@ -115,6 +129,22 @@ body {
     padding-bottom: 10px;
     outline: none;
     box-shadow: none !important;
+}
+
+.btn.btn--secondary{
+    background-color:#E7FAF8 !important;
+    border-color: #E7FAF8 !important;
+    color: #03332A;
+}
+
+.btn.btn--tertiary {
+    background: #004b4014;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    color: #004B40;
+    /* padding: 15px; */
+    border-radius: 0px;
+    font-weight: bolder;
 }
 
 /* Intl Telephone Input */
@@ -226,4 +256,14 @@ p.basil a{
     letter-spacing: 0.25px;
     line-height: 19px;
     color: #00100F;
+}
+
+@media (max-width: 768px){
+    .custom-container{
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }

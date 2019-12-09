@@ -51,12 +51,20 @@
     #sidebar {
         margin-left: -300px;
     }
+
     #sidebar.active {
         margin-left: 0;
+        z-index: 999999;
     }
+
     #content {
         width: 100%;
     }
+
+    #content.active{
+        width: 100%;
+    }
+    
     #sidebarCollapse span {
         display: none;
     }
